@@ -6,7 +6,7 @@ import ReferInPage from './pages/ReferPage/ReferInPage'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <NavBar />
       <Routes>
         <Route path="/"          element={<HomePage />}                          />
