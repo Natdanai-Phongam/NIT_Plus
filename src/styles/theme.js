@@ -11,7 +11,7 @@ const nitTheme = {
 
     /* Typography */
     fontFamily:
-      "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, " +
+      "'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, " +
       "'Noto Sans', 'Noto Sans Thai', sans-serif",
     fontSize: 14,
     lineHeight: 1.5714,

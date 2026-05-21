@@ -40,11 +40,11 @@ const MOCK_DATA = [
    SUB-COMPONENTS
    ══════════════════════════════════════════════════════════ */
 
-function ActionIcons({ onDelete }) {
+function ActionIcons({ onEdit, onDelete }) {
   return (
     <div className={styles.actions}>
       <Tooltip title="แก้ไข">
-        <button className={`${styles.actionBtn} ${styles.actionBtnEdit}`} type="button">
+        <button className={`${styles.actionBtn} ${styles.actionBtnEdit}`} type="button" onClick={onEdit}>
           <EditOutlined style={{ fontSize: 14 }} />
         </button>
       </Tooltip>
@@ -129,7 +129,10 @@ export default function ReferPage() {
       width: 120,
       align: 'center',
       render: (_, row) => (
-        <ActionIcons onDelete={() => setDeleteTarget({ open: true, record: row })} />
+        <ActionIcons
+          onEdit={() => { setFormPatientId(row.patientId); setFormModalOpen(true) }}
+          onDelete={() => setDeleteTarget({ open: true, record: row })}
+        />
       ),
     },
   ]
