@@ -368,7 +368,7 @@ export default function ReferInDetailModal({ open, onClose, referId }) {
             padding: 0,
             display: 'flex',
             flexDirection: 'column',
-            maxHeight: 'calc(100vh - 120px)',
+            height: 'calc(100vh - 120px)',
             overflow: 'hidden',
           },
         }}
