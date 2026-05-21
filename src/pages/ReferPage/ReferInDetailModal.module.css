@@ -1,0 +1,384 @@
+/* ── Info bar (patient reference strip) ─────────────── */
+.infoBar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 20px;
+  background: var(--color-primary-light);
+  border-bottom: 1px solid var(--color-border-split);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.infoLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.referId {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.infoMeta {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.infoMeta strong {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.infoActions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ── Tabs wrapper ────────────────────────────────────── */
+.detailTabs {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.detailTabs :global(.ant-tabs-nav) {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: var(--color-surface) !important;
+  border-bottom: 1px solid var(--color-border-split) !important;
+  flex-shrink: 0 !important;
+}
+
+/* Indent the scrollable tab list away from modal edges */
+.detailTabs :global(.ant-tabs-nav-wrap) {
+  padding: 0 20px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+}
+
+/* Hide scrollbar visually, keep scroll functionality */
+.detailTabs :global(.ant-tabs-nav-wrap)::-webkit-scrollbar {
+  display: none;
+}
+
+/* Keep all tabs on one line */
+.detailTabs :global(.ant-tabs-nav-list) {
+  flex-wrap: nowrap !important;
+}
+
+/* Hide the "..." more button entirely */
+.detailTabs :global(.ant-tabs-nav-more) {
+  display: none !important;
+}
+
+.detailTabs :global(.ant-tabs-content-holder) {
+  flex: 1 !important;
+  overflow-y: auto !important;
+}
+
+.detailTabs :global(.ant-tabs-content) {
+  height: 100% !important;
+}
+
+.detailTabs :global(.ant-tabs-tabpane) {
+  padding: 20px !important;
+}
+
+/* ── Section block & title ───────────────────────────── */
+.sectionBlock {
+  margin-bottom: 4px;
+}
+
+.sectionTitle {
+  background: var(--color-primary-light);
+  border-top: 1px solid var(--color-border-split);
+  border-bottom: 1px solid var(--color-border-split);
+  margin: 20px 0 12px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
+  border-radius: 4px;
+  display: block;
+}
+
+.sectionBlock:first-child .sectionTitle {
+  margin-top: 0;
+}
+
+/* Inline variant: label left, tag right — used for single-value sections */
+.sectionTitleInline {
+  display: flex !important;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 0 !important;
+}
+
+/* ── Field grid layouts ──────────────────────────────── */
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 24px;
+  margin-bottom: 14px;
+}
+
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px 24px;
+  margin-bottom: 14px;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 24px;
+  margin-bottom: 14px;
+}
+
+/* ── Single field ────────────────────────────────────── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.fieldLabel {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.fieldValue {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  word-break: break-word;
+}
+
+/* ── Numbered list (ข้อมูลการส่งรักษา 1–8) ──────────── */
+.numberedList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.numberedItem {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.numberedLabel {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.numberedValue {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* ── ICD9 cards ──────────────────────────────────────── */
+.icd9List {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.icd9Card {
+  border: 1px solid var(--color-border-split);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── ICD10 cards ─────────────────────────────────────── */
+.icd10List {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.icd10Card {
+  border: 1px solid var(--color-border-split);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  background: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── Tabular data (allergy / tx history) ─────────────── */
+.dataTable {
+  border: 1px solid var(--color-border-split);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.tableHeader,
+.tableRow {
+  display: grid;
+  padding: 8px 12px;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.tableHeader {
+  background: var(--color-raised);
+  border-bottom: 1px solid var(--color-border-split);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.tableRow {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border-split);
+  color: var(--color-text-primary);
+  font-size: 14px;
+}
+
+.tableRow:last-child { border-bottom: none; }
+
+/* column widths: วันที่ | รหัสยา | ชื่อยา | วินิจฉัย | ความร้ายแรง */
+.allergyGrid { grid-template-columns: 100px 80px 1fr 130px 160px; }
+
+/* column widths: รหัสยา | ชื่อยา | วันเริ่ม | วันสิ้นสุด */
+.txGrid { grid-template-columns: 80px 1fr 130px 130px; }
+
+/* ── Document sub-tab buttons ────────────────────────── */
+.docSubTabBar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.docSubTabBtn {
+  padding: 4px 14px;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: border-color var(--duration-fast) var(--ease),
+              color var(--duration-fast) var(--ease),
+              background var(--duration-fast) var(--ease);
+}
+
+.docSubTabBtn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.docSubTabBtnActive {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff !important;
+}
+
+/* ── Document file cards ─────────────────────────────── */
+.docGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.docCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border-split);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.docFileName {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Sticky action bar ───────────────────────────────── */
+.actionBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-top: 1px solid var(--color-border-split);
+  background: var(--color-surface);
+  flex-shrink: 0;
+}
+
+.actionRight {
+  display: flex;
+  gap: 8px;
+}
+
+/* ── Vital signs timestamp header ───────────────────── */
+.vitalHeader {
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--color-border-split);
+}
+
+.vitalHeader :global(.ant-descriptions-item) {
+  padding-bottom: 0 !important;
+}
+
+/* ── AntD Descriptions (TabPersonal) ────────────────── */
+.descField {
+  margin-bottom: 0 !important;
+}
+
+.descField :global(.ant-descriptions-item) {
+  padding-bottom: 16px !important;
+}
+
+.descField :global(.ant-descriptions-item-label) {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: var(--color-text-secondary) !important;
+  background: transparent !important;
+  white-space: nowrap;
+}
+
+.descField :global(.ant-descriptions-item-content) {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: var(--color-text-primary) !important;
+}
+
+/* ── Empty state ─────────────────────────────────────── */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 32px 16px;
+  color: var(--color-text-disabled);
+  font-size: 14px;
+}

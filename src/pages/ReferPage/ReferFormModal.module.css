@@ -1,0 +1,414 @@
+/* ─── Required document upload section ───────────────── */
+.docUploadSection {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--color-border-split);
+  background: var(--color-surface);
+  flex-shrink: 0;
+}
+.docUploadLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 8px 0;
+}
+.requiredMark {
+  color: var(--color-error);
+  margin-left: 2px;
+}
+.dragger :global(.ant-upload-drag) {
+  border: 2px dashed var(--color-primary) !important;
+  border-radius: var(--radius-md) !important;
+  background: var(--color-primary-light) !important;
+}
+.dragger :global(.ant-upload-drag:hover) {
+  border-color: var(--color-primary-mid) !important;
+}
+.draggerIcon {
+  font-size: 28px !important;
+  color: var(--color-primary) !important;
+}
+.draggerText {
+  font-size: 14px;
+  color: var(--color-text-primary);
+  margin: 4px 0 2px !important;
+}
+.draggerHint {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin: 0 !important;
+}
+
+/* ─── Scrollable form content ─────────────────────────── */
+.scrollContent {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* ─── Collapse overrides ──────────────────────────────── */
+.formCollapse {
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+.formCollapse :global(.ant-collapse-item) {
+  border-bottom: 1px solid var(--color-border-split) !important;
+  border-radius: 0 !important;
+}
+
+.formCollapse :global(.ant-collapse-header) {
+  background: var(--color-surface) !important;
+  padding: 14px 20px !important;
+  border-radius: 0 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: var(--color-text-primary) !important;
+}
+
+.formCollapse :global(.ant-collapse-header:hover) {
+  background: var(--color-primary-light) !important;
+}
+
+.formCollapse :global(.ant-collapse-item-active > .ant-collapse-header) {
+  color: var(--color-primary) !important;
+  border-bottom: 1px solid var(--color-border-split) !important;
+}
+
+.formCollapse :global(.ant-collapse-content) {
+  border-top: none !important;
+}
+
+.formCollapse :global(.ant-collapse-content-box) {
+  padding: 0 !important;
+}
+
+/* ─── Read-only field overrides ──────────────────────── */
+/* covers both: className on wrapper (.affix-wrapper) and direct on input */
+.readOnlyInput:global(.ant-input-affix-wrapper-disabled),
+.readOnlyInput:global(.ant-input-disabled) {
+  opacity: 1 !important;
+  color: var(--color-text-primary) !important;
+  border-color: var(--color-border) !important;
+  cursor: default !important;
+}
+.readOnlyInput :global(.ant-input-disabled),
+.readOnlyInput :global(.ant-input) {
+  color: var(--color-text-primary) !important;
+  opacity: 1 !important;
+  cursor: default !important;
+}
+.readOnlyDatePicker:global(.ant-picker-disabled) {
+  opacity: 1 !important;
+  border-color: var(--color-border) !important;
+}
+.readOnlyDatePicker :global(.ant-picker-input > input) {
+  color: var(--color-text-primary) !important;
+  opacity: 1 !important;
+  cursor: default !important;
+}
+
+/* ─── Section body ────────────────────────────────────── */
+.sectionBody {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ─── Grid layouts ────────────────────────────────────── */
+.row4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.row3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.row_8_4 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+}
+
+/* ─── Date + Time grouped container ── */
+.dateTimeGroup {
+  display: flex;
+  flex-direction: column;
+}
+.dateTimeLabel {
+  font-size: 14px;
+  color: var(--color-text-primary);
+  margin: 0 0 8px 0;
+}
+.dateTimeInputRow {
+  display: flex;
+  gap: 16px;
+}
+
+/* ─── Sub-section band label (full-bleed) ────────────── */
+.subSectionLabel {
+  background: var(--color-primary-light);
+  border-top: 1px solid var(--color-border-split);
+  border-bottom: 1px solid var(--color-border-split);
+  margin: 20px 0 12px;
+  padding: 8px 12px 8px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
+  border-radius: 4px;
+}
+
+.subSectionLabel:first-child {
+  margin-top: 0;
+}
+
+/* ─── Radio groups stacked vertically ────────────────── */
+.radioStack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ─── List sections (ICD, allergy, tx history) ────────── */
+.listHeader {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.emptyList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 32px 16px;
+  color: var(--color-text-disabled);
+  background: var(--color-raised);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-split);
+}
+
+.emptyList p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.emptyHint {
+  font-size: 12px;
+  color: var(--color-text-disabled);
+}
+
+/* ─── Document tabs upload area ───────────────────────── */
+.uploadPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 0;
+}
+
+/* ─── ICD9CM card ─────────────────────────────────────────── */
+.colSpan2 {
+  grid-column: span 2;
+}
+
+.icd9List {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.icd9Card {
+  border: 1px solid var(--color-border-split);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  background: var(--color-surface);
+}
+
+.icd9CardFooter {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 12px;
+  margin-top: 4px;
+  border-top: 1px solid var(--color-border-split);
+}
+
+/* ─── ICD10 tabular list ──────────────────────────────────── */
+.icd10List {
+  border: 1px solid var(--color-border-split);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.icd10Header,
+.icd10Row {
+  display: grid;
+  grid-template-columns: 180px 90px 1fr 36px;
+  gap: 12px;
+  padding: 8px 12px;
+  align-items: center;
+}
+
+.icd10Header {
+  background: var(--color-raised);
+  border-bottom: 1px solid var(--color-border-split);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.icd10Row {
+  border-bottom: 1px solid var(--color-border-split);
+  background: var(--color-surface);
+}
+
+.icd10Row:last-child {
+  border-bottom: none;
+}
+
+.icd10Code {
+  font-size: 14px;
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.icd10Name {
+  font-size: 14px;
+  color: var(--color-text-primary);
+}
+
+/* ─── Drug allergy tabular list ──────────────────────────── */
+.allergyList {
+  border: 1px solid var(--color-border-split);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.allergyHeader,
+.allergyRow {
+  display: grid;
+  grid-template-columns: 100px 80px 1fr 130px 160px 56px;
+  gap: 12px;
+  padding: 8px 12px;
+  align-items: center;
+}
+
+.allergyHeader {
+  background: var(--color-raised);
+  border-bottom: 1px solid var(--color-border-split);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.allergyRow {
+  border-bottom: 1px solid var(--color-border-split);
+  background: var(--color-surface);
+  font-size: 14px;
+  color: var(--color-text-primary);
+}
+
+.allergyRow:last-child {
+  border-bottom: none;
+}
+
+.allergyActions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.actionEdit {
+  color: var(--color-warning) !important;
+}
+
+/* ─── Treatment history tabular list ─────────────────────── */
+.txHistoryList {
+  border: 1px solid var(--color-border-split);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.txHistoryHeader,
+.txHistoryRow {
+  display: grid;
+  grid-template-columns: 90px 1fr 160px 160px 56px;
+  gap: 12px;
+  padding: 8px 12px;
+  align-items: center;
+}
+
+.txHistoryHeader {
+  background: var(--color-raised);
+  border-bottom: 1px solid var(--color-border-split);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.txHistoryRow {
+  border-bottom: 1px solid var(--color-border-split);
+  background: var(--color-surface);
+  font-size: 14px;
+  color: var(--color-text-primary);
+}
+
+.txHistoryRow:last-child {
+  border-bottom: none;
+}
+
+/* ─── ICD9CM search modal ─────────────────────────────────── */
+.icd9SearchRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.icd9SearchLabel {
+  font-size: 14px;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ─── Sticky action bar ───────────────────────────────── */
+.actionBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-top: 1px solid var(--color-border-split);
+  background: var(--color-surface);
+  flex-shrink: 0;
+}
+
+.actionRight {
+  display: flex;
+  gap: 8px;
+}
+
+/* ─── Principal Diagnosis banner ─────────────────────── */
+.principalBanner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  background: #E6F4FF;
+  border: 1px solid #91CAFF;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  color: #0958D9;
+}

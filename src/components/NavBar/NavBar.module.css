@@ -1,0 +1,141 @@
+/* ─── Top Navigation Bar ──────────────────────────────
+   White bar · Navy brand block · Logout right
+   Mirrors reference screenshot exactly
+   ───────────────────────────────────────────────────── */
+
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: stretch;
+  height: var(--nav-height);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Brand block ── */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px 0 12px;
+  background: var(--color-nav-navy);
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: background var(--duration-fast) var(--ease);
+}
+.brand:hover {
+  background: var(--color-nav-navy-dark);
+}
+
+.logo {
+  height: 32px;
+  width: 32px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.brandLabel {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* ── Menu list ── */
+.menu {
+  display: flex;
+  align-items: stretch;
+  list-style: none;
+  margin: 0;
+  padding: 0 4px;
+  flex: 1;
+}
+
+/* ── Single menu item (works as <li> or <a> via Link) ── */
+.item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 16px;
+  height: var(--nav-height);
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  white-space: nowrap;
+  user-select: none;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition:
+    color       var(--duration-default) var(--ease),
+    background  var(--duration-default) var(--ease);
+}
+.item:hover {
+  color: var(--color-nav-navy);
+  background: #F5F7FA;
+}
+
+/* Active: navy bold + navy underline */
+.itemActive {
+  color: var(--color-nav-navy);
+  font-weight: 600;
+  border-bottom-color: var(--color-nav-navy);
+}
+
+/* Dropdown caret */
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left:  4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top:   5px solid currentColor;
+  opacity: 0.5;
+  margin-top: 1px;
+  flex-shrink: 0;
+  transition: transform var(--duration-default) var(--ease);
+}
+.item:hover .caret {
+  opacity: 0.8;
+}
+
+/* ── Right zone ── */
+.right {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  flex-shrink: 0;
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border: none;
+  background: transparent;
+  color: var(--color-nav-navy);
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition:
+    background var(--duration-default) var(--ease),
+    color      var(--duration-default) var(--ease);
+}
+.logout:hover {
+  background: #F0F2F5;
+  color: var(--color-nav-navy-dark);
+}
+.logoutIcon {
+  opacity: 0.75;
+  flex-shrink: 0;
+}
