@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-19T00:00:00Z",
+  "title": "Design System: NIT_Plus",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Institutional Navy",
+        "canonical": "#1E3869",
+        "purpose": "The single brand anchor. Primary buttons, nav brand block, category badges, active states, focus rings.",
+        "tonalRamp": ["#080F1F", "#0D1B3A", "#132555", "#1E3869", "#2A4D8A", "#3362A5", "#5080BF", "#7AA0D0", "#A8C2E0", "#E8EDF5"]
+      },
+      "primary-light": {
+        "role": "primary-tint",
+        "displayName": "Navy Light",
+        "canonical": "#E8EDF5",
+        "purpose": "Selected state backgrounds, badge fills, hover surface tints."
+      },
+      "link": {
+        "role": "link",
+        "displayName": "Link Blue",
+        "canonical": "#1677FF",
+        "purpose": "Text-link actions in tables — แก้ไข (edit). Distinct from navy brand."
+      },
+      "success": {
+        "role": "success",
+        "displayName": "Clinical Green",
+        "canonical": "#52C41A",
+        "purpose": "Success states, completed status, healthy indicators."
+      },
+      "warning": {
+        "role": "warning",
+        "displayName": "Alert Gold",
+        "canonical": "#FAAD14",
+        "purpose": "Warnings, pending states, mild alerts."
+      },
+      "error": {
+        "role": "error",
+        "displayName": "Critical Red",
+        "canonical": "#FF4D4F",
+        "purpose": "Errors, destructive actions, validation failures."
+      },
+      "surface": {
+        "role": "surface",
+        "displayName": "Canvas White",
+        "canonical": "#FFFFFF",
+        "purpose": "All primary content surfaces: cards, tables, form panels."
+      },
+      "background": {
+        "role": "background",
+        "displayName": "Page Background",
+        "canonical": "#F0F2F5",
+        "purpose": "Base layout background."
+      }
+    },
+    "shadows": [
+      { "name": "ambient-low",  "value": "0 1px 4px rgba(0,0,0,0.08)",  "purpose": "Top navigation bar, sticky elements." },
+      { "name": "panel-medium", "value": "0 4px 12px rgba(0,0,0,0.12)", "purpose": "Dropdowns, Select popups, Tooltip containers." },
+      { "name": "modal-high",   "value": "0 8px 24px rgba(0,0,0,0.16)", "purpose": "Modal dialogs, Drawer panels, notification toasts." }
+    ],
+    "motion": [
+      { "name": "ease-standard",     "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Default easing." },
+      { "name": "duration-fast",     "value": "100ms",                        "purpose": "Micro-interactions." },
+      { "name": "duration-default",  "value": "200ms",                        "purpose": "Standard transitions." },
+      { "name": "duration-slow",     "value": "300ms",                        "purpose": "Modal enter, drawer slide." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "576px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "992px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Navy filled button. All primary actions: สร้างแบบฟอร์ม, ค้นหา, บันทึก.",
+      "html": "<button class=\"ds-btn-primary\">สร้างแบบฟอร์ม</button>",
+      "css": ".ds-btn-primary { background: #1E3869; color: #fff; padding: 4px 15px; height: 32px; border: none; border-radius: 6px; font-size: 14px; cursor: pointer; transition: background 0.2s; } .ds-btn-primary:hover { background: #2A4D8A; } .ds-btn-primary:active { background: #14264A; }"
+    },
+    {
+      "name": "Category Badge",
+      "kind": "chip",
+      "refersTo": "tag-category",
+      "description": "Navy filled badge for content categories.",
+      "html": "<span class=\"ds-badge-category\">ข่าวสาร</span>",
+      "css": ".ds-badge-category { background: #1E3869; color: #fff; padding: 0 8px; height: 22px; line-height: 22px; border-radius: 4px; font-size: 12px; display: inline-block; }"
+    },
+    {
+      "name": "Top Navigation Bar",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "White bar with navy brand block on left and underline active indicator.",
+      "html": "<nav class=\"ds-topnav\"><div class=\"ds-topnav-brand\">NIT</div><ul class=\"ds-topnav-menu\"><li class=\"ds-active\">Home</li></ul></nav>",
+      "css": ".ds-topnav { display: flex; height: 50px; background: #fff; border-bottom: 1px solid #D9D9D9; box-shadow: 0 1px 4px rgba(0,0,0,0.08); } .ds-topnav-brand { background: #1E3869; color: #fff; padding: 0 14px; display: flex; align-items: center; font-weight: 700; } .ds-topnav-menu { display: flex; list-style: none; margin: 0; padding: 0 4px; } .ds-topnav-menu li { padding: 0 16px; display: flex; align-items: center; color: #595959; border-bottom: 2px solid transparent; } .ds-topnav-menu li.ds-active { color: #1E3869; font-weight: 600; border-bottom-color: #1E3869; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Clarity Clinic",
+    "overview": "NIT_Plus uses a single brand anchor — Institutional Navy #1E3869 — that appears on primary buttons, navigation chrome, category badges, and active states. This consolidation gives the system institutional weight without visual fragmentation.",
+    "keyCharacteristics": [
+      "Single navy brand anchor across all primary actions and structural elements",
+      "White content surfaces on light gray page background",
+      "Noto Sans Thai priority for bilingual readability",
+      "Flat surfaces with elevation only for modals and overlays",
+      "Functional color signals (green/gold/red) reserved for status only"
+    ],
+    "rules": [
+      {
+        "name": "The Single Anchor Rule",
+        "body": "Navy is the only brand color. Never introduce a competing accent.",
+        "section": "colors"
+      },
+      {
+        "name": "The Signal Rule",
+        "body": "Link Blue means edit. Danger Red means delete. Green/Gold/Red mean status.",
+        "section": "colors"
+      },
+      {
+        "name": "The Thai-First Rule",
+        "body": "Every text rendering decision is tested in Thai script first.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "Do use Institutional Navy (#1E3869) as the single brand anchor",
+      "Do keep page backgrounds at #F0F2F5 and card surfaces at #FFFFFF",
+      "Do use Link Blue (#1677FF) for แก้ไข and Danger Red (#FF4D4F) for ลบ",
+      "Do test every text label in Thai script first"
+    ],
+    "donts": [
+      "Don't introduce a competing brand color (teal, purple, etc.)",
+      "Don't use border-left accent stripes as decoration",
+      "Don't use gradients or glassmorphism",
+      "Don't put any text below 12px"
+    ]
+  }
+}
